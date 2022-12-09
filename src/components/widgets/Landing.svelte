@@ -13,7 +13,7 @@
 			</a>
 		</div>
 	</div>
-	<div class="absolute right-0 -z-10 h-screen w-1/2 object-center">
+	<div class="absolute right-0 -z-10 h-screen w-1/2">
 		<img loading="lazy" class="h-full object-cover object-bottom" src="./images/landing-page.webp" alt="forest" />
 	</div>
 </section>
