@@ -1,11 +1,49 @@
-<script></script>
+<script>
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		gsap.registerPlugin(ScrollTrigger);
+
+		gsap.fromTo('.picture-left', {
+			scrollTrigger: {
+				trigger: '.picture-left',
+				start: 'top bottom',
+				end: 'bottom botton',
+				scrub: true,
+			},
+			x: '-75%',
+		});
+		gsap.to('.picture-right', {
+			scrollTrigger: {
+				trigger: '.picture-right',
+				start: 'top bottom',
+				end: 'bottom botton',
+				scrub: true,
+			},
+			x: '75%',
+		});
+		gsap.to('.about-me-text', {
+			scrollTrigger: {
+				trigger: '.about-me-text',
+				start: 'top center',
+				end: 'top 20%',
+				markers: true,
+				scrub: true,
+			},
+			scale: 1,
+			opacity: '100%',
+		});
+	});
+</script>
 
 <section id="about" class="flex h-screen w-full justify-between">
-	<div class="h-full w-1/4">
-		<img src="/images/landing-page.webp" alt="placeholder" class="h-full w-full object-cover object-right" />
+	<div class="picture-left h-full w-1/2">
+		<img src="/images/landing-page.webp" alt="placeholder" class="h-full w-full object-cover object-left" />
 	</div>
 
-	<div class="flex w-[calc(50vw-16px)] flex-col items-center border-b border-slate-900 pb-4 pt-20">
+	<div class="about-me-text  flex w-[calc(50vw-16px)] flex-col  items-center border-b border-slate-900 pb-4 pt-20">
 		<h2 class="ml-24 mb-8 w-fit">
 			about.
 			<span class="relative top-4 right-24 text-8xl font-bold text-cyan-400/20">ME</span>
@@ -32,7 +70,7 @@
 		<hr class="my-4 mx-auto w-2/3 border-slate-300" />
 	</div>
 
-	<div class="flex h-full w-1/4 justify-end">
-		<img src="/images/landing-page.webp" alt="placeholder" class="h-full w-full object-cover object-left" />
+	<div class="picture-right flex h-full w-1/2 justify-end">
+		<img src="/images/landing-page.webp" alt="placeholder" class="h-full w-full object-cover object-right" />
 	</div>
 </section>
