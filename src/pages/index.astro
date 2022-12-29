@@ -3,15 +3,15 @@ import Layout from '../layouts/Layout.astro';
 import Landing from '~/components/widgets/Landing.svelte';
 import Portfolio from '~/components/widgets/Portfolio.svelte';
 import About from '~/components/widgets/About.svelte';
+import Contact from '~/components/widgets/Contact.svelte';
 ---
 
 <Layout title="2023 ASM website.">
 	<main>
 		<Landing />
 		<Portfolio />
-		<About client:visible />
-		<Landing />
-		
+		<About client:load />
+		<Contact />
 	</main>
 	<style></style>
 </Layout>

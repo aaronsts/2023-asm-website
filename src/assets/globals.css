@@ -16,6 +16,14 @@
   h3 {
     @apply text-3xl font-thin font-sans;
   }
+
+  label {
+    @apply text-slate-500 uppercase text-base tracking-wider
+  }
+
+  input, textarea {
+    @apply bg-slate-50 border border-slate-400 py-2 px-3 text-slate-700
+  }
 }
 
 @layer components {

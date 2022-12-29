@@ -6,30 +6,30 @@
 	onMount(() => {
 		gsap.registerPlugin(ScrollTrigger);
 
-		gsap.fromTo('.picture-left', {
+		gsap.to('.picture-left', {
 			scrollTrigger: {
 				trigger: '.picture-left',
-				start: 'top bottom',
-				end: 'bottom botton',
+				start: 'top 95%',
+				end: 'bottom 90%',
 				scrub: true,
 			},
-			x: '-75%',
+			x: '-50%',
 		});
 		gsap.to('.picture-right', {
 			scrollTrigger: {
 				trigger: '.picture-right',
-				start: 'top bottom',
-				end: 'bottom botton',
+				start: 'top 95%',
+				end: 'bottom 90%',
 				scrub: true,
 			},
-			x: '75%',
+			x: '50%',
 		});
+
 		gsap.to('.about-me-text', {
 			scrollTrigger: {
 				trigger: '.about-me-text',
 				start: 'top center',
 				end: 'top 20%',
-				markers: true,
 				scrub: true,
 			},
 			scale: 1,
@@ -38,8 +38,8 @@
 	});
 </script>
 
-<section id="about" class="flex h-screen w-full justify-between">
-	<div class="picture-left h-full w-1/2">
+<section id="about" class="relative flex h-screen w-full justify-center overflow-hidden">
+	<div class="picture-left absolute left-0 h-full w-1/2">
 		<img src="/images/landing-page.webp" alt="placeholder" class="h-full w-full object-cover object-left" />
 	</div>
 
@@ -70,7 +70,7 @@
 		<hr class="my-4 mx-auto w-2/3 border-slate-300" />
 	</div>
 
-	<div class="picture-right flex h-full w-1/2 justify-end">
+	<div class="picture-right absolute right-0 flex h-full w-1/2">
 		<img src="/images/landing-page.webp" alt="placeholder" class="h-full w-full object-cover object-right" />
 	</div>
 </section>
